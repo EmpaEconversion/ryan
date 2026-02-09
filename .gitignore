@@ -1,6 +1,6 @@
 *.DS_Store
 *.pyc
-uv.lock
+# Track uv.lock (uv dependency lockfile)
 examples/Data analysis/Data/
 examples/Data analysis/Output/
 examples/Data analysis/Recipe
