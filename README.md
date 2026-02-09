@@ -1,5 +1,5 @@
 # ryan
-Repository to host a pipeline for electrocatalysis CO2 reduction data analysis and ML
+Repository to host a pipeline for electrocatalysis CO₂ reduction data analysis and ML
 
 ## Windows Setup (PowerShell + uv + Jupyter)
 
