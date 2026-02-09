@@ -1,44 +1,73 @@
 # ryan
 Repository to host a pipeline for electrocatalysis CO2 reduction data analysis and ML
 
-## Development Setup (Using Conda + uv)
+## Windows Setup (PowerShell + uv + Jupyter)
 
-This project uses **uv** to manage dependency groups defined in `pyproject.toml`.  
-If you want to work on the codebase in editable mode while using **Conda** for the Python environment, follow the steps below.
-This will allow one to have conda environment called ryan that can be applied and used in many jupyter notebook in various directory.
+These steps are for **Windows** using **PowerShell**.
 
+1. Install Python, Git, and uv
 
-1. Create a new Conda environment (modify the name if desired)
-This sets up an isolated Python environment.
-```bash
-conda create -n ryan python=3.12 
-```
-2. Activate the environment
-```bash
-conda activate ryan
-```
+- Python (Windows download): https://www.python.org/downloads/windows/
+- Git (Windows download): https://git-scm.com/download/win
+- uv install guide: https://docs.astral.sh/uv/getting-started/installation/
 
-3. Install uv
-uv is used to read dependency groups and resolve dependencies.
-```bash
+Install `uv` with:
+
+```powershell
 pip install uv
 ```
 
-4. Install the project in editable mode with optional dependency groups
-    --group analysis: Installs dependencies for data analysis workflows
-    --group ml_pipeline: Installs dependencies for the ML pipeline components
-```bash
-uv pip install --group analysis --group ml_pipeline -e .
+Close and reopen PowerShell after installing.
+
+2. Move to the folder where you want to keep this repo:
+
+```powershell
+cd C:\path\to\your\projects
 ```
 
-5. (Optional) Install development tools (linting, testing, formatting, etc.)
-```bash
-uv pip install --group dev -e .
+3. Clone the repository:
+
+```powershell
+git clone https://github.com/NukP/ryan.git
 ```
 
-6. (Optional) Register this Conda environment as a Jupyter kernel
-    This allows you to select the kernel in VS Code / JupyterLab / notebooks.
-```bash
-python -m ipykernel install --user --name ryan --display-name "ryan"
+4. Enter the project folder:
+
+```powershell
+cd ryan
 ```
+
+5. Create a virtual environment:
+
+```powershell
+uv venv
+```
+
+6. Activate the virtual environment:
+
+```powershell
+.\.venv\Scripts\activate
+```
+
+7. Install dependencies from `pyproject.toml` / `uv.lock`:
+
+```powershell
+uv sync
+```
+
+8. Register the environment as a Jupyter kernel:
+
+```powershell
+python -m ipykernel install --user --name "ryan" --display-name "ryan"
+```
+
+9. Select this kernel in VS Code:
+
+- Open a notebook (`.ipynb`).
+- In the top-right corner, select **Select Kernel**.
+- Choose **Select Another Kernel...**.
+- Choose **Jupyter Kernel...**.
+- Select **ryan**.
+
+If `ryan` does not appear, refresh the kernel list or restart VS Code.
 
