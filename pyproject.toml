@@ -5,7 +5,7 @@ description = "This is a template repository for Python projects that use uv for
 authors = [{ name = "Nukorn Plainpan", email = "nukorn.p27@gmail.com" }]
 readme = "README.md"
 keywords = ['python']
-requires-python = ">=3.10,<4.0"
+requires-python = ">=3.10,<=3.12"
 classifiers = [
     "Intended Audience :: Developers",
     "Programming Language :: Python",
@@ -13,36 +13,19 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
     "pre-commit>=4.5.0",
-]
-
-[project.urls]
-Homepage = "https://NukP.github.io/ryan/"
-Repository = "https://github.com/NukP/ryan"
-Documentation = "https://NukP.github.io/ryan/"
-
-[dependency-groups]
-dev = [
     "pytest>=7.2.0",
-    "pre-commit>=2.20.0",
     "tox-uv>=1.11.3",
     "ty>=0.0.1a16",
     "ruff>=0.11.5",
-]
-
-analysis = [
     "yadg",
     "dgpost",
     "ipykernel",
     "netCDF4",
-    "pybis"
-]
-
-ml_pipeline = [
+    "pybis",
     "tqdm",
     "numpy>=2",
     "openpyxl",
@@ -54,13 +37,17 @@ ml_pipeline = [
     "shap",
     "pandas<3",
     "seaborn",
-    "ipykernel",
     "ipywidgets",
     "nbformat",
     "catboost>=1.2.8",
     "lightgbm>=4.6.0",
     "optuna>=4.6.0",
 ]
+
+[project.urls]
+Homepage = "https://NukP.github.io/ryan/"
+Repository = "https://github.com/NukP/ryan"
+Documentation = "https://NukP.github.io/ryan/"
 
 [build-system]
 requires = ["hatchling"]
